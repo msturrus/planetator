@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+
+  </head>
+  <body>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-headphones"></span> /mu/sic chart generator</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/register/">Register</a></li>
+            <li><a href="/charts/build/" class="green"><strong>Build Chart</strong></a></li>
+            <li><a href="/account/">My Account</a></li>
+            <li><a href="/logout/">Logout</a><li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+
+
+    <body>
+      <div class="container" id="chart-area">
+      <div class="row">
+          <!-- your first col -->
+          <div class="col-xs-12 col-sm-7 col-md-6 col-lg-8 col1 center">
+            <div id="zone-container">
+
+            </div><!--close zone container -->
+            <br>
+            <button type="button" id="build-btn" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-triangle-bottom"></span> Load New Rows</button>
+
+            <button id="save-btn" type="button" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-floppy-save"></span> Save My Chart</button>
+
+            <div id="save-alert-container">
+              <div id="save-alert">
+                <strong>Success!</strong> Your chart has been saved! <a href="/account">Click here to go to my Account.</a>
+              </div>
+            </div>
+
+            <br/>
+            <br/>
+            <div id="delete-box" class="dropzone trash"></div>
+          </div>
+
+          <div class="col-xs-12 col-sm-5 col-md-6 col-lg-4 col2 center">
+              <div class="col-sm-12">
+
+              </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-5 col-md-6 col-lg-4 col2 center">
+              <div class="col-sm-12">
+                <div class="jumbotron editor" id="planet-preview">
+                </div>
+                <div class="jumbotron bottompad">
+                  <h2 class="darker">Planetation!</h2>
+                  <p class="searchtext">Work here to make planets.  Please planetate responsibly.</p>
+
+                  <center><div id="example" style="height: 400px; width: 178px; color: black"></div></center>
+                </div>
+              </div>
+
+              <script type="text/javascript">
+
+              // function render(){
+              //   requestAnimationFrame(render)
+                // var scene = document.getObjectByName('planetScene')
+                // var camera = document.getObjectByName('camera')
+              //   console.log(scene)
+              //   console.log(camera)
+
+                // var time = performance.now() * 0.001
+
+                // sun.position.x = Math.cos( time ) * 800;
+                // sun.position.y = Math.sin( time ) * 400;
+                // planet.rotation.x += .3;
+                // scene.getObjectByName( 'TestPlanet' ).rotation.y -= .01
+                // planet.rotation.y -= .01;
+                // renderer.render(scene, camera)
+              // }
+
+
+          // TO create a scene we need three things: A Scene, Camera, renderer
+
+          // var scene = new THREE.Scene();
+          //
+          //
+          //
+          // var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+          //
+          // var renderer = new THREE.WebGLRenderer();
+          // renderer.setSize( window.innerWidth, window.innerHeight);
+          //
+          // scene.add(camera)
+          // camera.position.z = 100
+          //
+          //  document.getElementById('zone-container').appendChild(renderer.domElement)
+          //
+          //
+          // // First argument is the radius , the second argument is the number vertices you can add to your geomotry
+          // // var sunGeometry = new THREE.SphereGeometry(50, 32, 32)
+          // //
+          // // var material = new THREE.MeshLambertMaterial()
+          // // material.map  = THREE.TextureLoader('mars_1k_color.jpg')
+          // //
+          // // var sunMesh = new THREE.Mesh(sunGeometry, material)
+          // // scene.add(sunMesh)
+          // //
+          // // // first parameter is geometry, second is the material
+          // // var sun = new THREE.Mesh(sunGeometry, material)
+          // //
+          // // scene.add(sun);
+          //
+          // var pointLight = new THREE.PointLight(0xFFFAFF);
+          //
+          // pointLight.position.x = 10;
+          // pointLight.position.y = 10;
+          // pointLight.position.z = 190;
+          //
+          // scene.add(pointLight)
+          //
+          // function render(){
+          //   requestAnimationFrame(render)
+          //
+          //   var time = performance.now() * 0.001
+          //
+          //   // sun.position.x = Math.cos( time ) * 800;
+      	  //   // sun.position.y = Math.sin( time ) * 400;
+          //   // sun.rotation.x += .3;
+          //   // sun.rotation.y -= .05;
+          //   renderer.render(scene, camera)
+          // }
+          //
+          // render()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </script>
+          </div>
+        </div>
+      </div>
+
+    </body>
+
+
+    <div class="center">
+    <footer></footer>
+    </div>
+
+    <script type="text/javascript" src="/javascripts/components/planetation-old.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/react-three.js"></script>
+    <!-- <script type="text/javascript" src="/javascripts/components/react3test.js"></script> -->
+
+
+
+  </body>
+</html>
